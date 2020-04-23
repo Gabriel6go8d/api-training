@@ -1,0 +1,62 @@
+:root {
+    --primary-color: #010626;
+    --secundary-color:#010B40;
+    --another-color: #020F59;
+}
+
+.main {
+    background-color: var(--primary-color);
+    height: 100vh;
+}
+
+.mynav {
+    width: 5rem;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    background-color: var(--secundary-color);
+    transition: all 200ms ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.last {
+    margin-top: auto;
+}
+
+.item{
+    height: 5rem;
+    width: 100%;
+    display: flex;
+    align-items: center;    
+    transition: all 200ms ease;
+    filter: grayscale(80%) opacity(0.7);
+}
+
+.item:hover {
+    filter: grayscale(0%) opacity(1);
+    background-color: var(--another-color);
+}
+
+#togBut {
+    transition: all 400ms ease;
+    position: relative;
+    left: 15px;
+}
+
+.link-text {    
+    color: white;
+    margin-left: 10px;
+}
+
+.icon{
+    width: 50px;
+    margin-left: 15px;
+}
+
+.logo{
+    filter: grayscale(0%) opacity(1);
+    background-color: var(--another-color);
+}
