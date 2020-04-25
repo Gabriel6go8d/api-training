@@ -17,11 +17,9 @@ function MyNav(prop) {
         if(toggle){
             theNav.classList.add('mynavOpen')
             arrow.classList.add('rotate')
-            divBlur.style.filter = 'grayscale(100%)'
         }else{
             theNav.classList.remove('mynavOpen')
             arrow.classList.remove('rotate')
-            divBlur.style.filter = 'grayscale(0%)'
         }
         setToggle(!toggle)
         
