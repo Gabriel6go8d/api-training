@@ -124,7 +124,7 @@ function CardLayout(prop) {
     }
 
     return (
-        <div className='mt-5 col-12 col-md-6 col-xl-3 m-0 p-0 testtt'>
+        <div className='mt-5 col-12 col-md-6 col-xl-4 m-0 p-0 testtt'>
             <div className='row m-0 p-0 justify-content-center'>
                 <div className='cardL' ref={DivRef}>
                     <div className='mt-3 ml-3 mr-3 row p-0 text-left text-white'>
