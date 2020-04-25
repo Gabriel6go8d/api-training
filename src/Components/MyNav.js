@@ -1,68 +1,101 @@
 import React, {useState, useRef, useEffect} from 'react'
 import {FaBuffer, FaAtlassian} from 'react-icons/fa'
 import {FiChevronsRight} from 'react-icons/fi'
+import {AiFillSetting} from 'react-icons/ai'
+import {MdMessage} from 'react-icons/md'
 
-function MyNav() {
+function MyNav(prop) {
+
     
     const [toggle, setToggle] = useState(false)
     const navRef = useRef(null)
-    const toggleBut = () => {
-        const textL = document.getElementsByClassName('link-text')
-        if(toggle){
-            navRef.current.style.width = '15rem'
-            for(var i=0; i < textL.length; i++){
-                textL[i].style.display = 'block'
-                document.getElementById('togBut').style.transform = 'rotate(180deg)'
-                document.getElementById('togBut').style.marginLeft = '150px'
-            }
 
+    const toggleBut = () => {
+        const theNav = document.getElementById('theNav')
+        const arrow = document.getElementById('arrow')
+        const divBlur = document.getElementById('ContDiv')
+        if(toggle){
+            theNav.classList.add('mynavOpen')
+            arrow.classList.add('rotate')
+            divBlur.style.filter = 'grayscale(100%)'
         }else{
-            navRef.current.style.width = '5rem'            
-            for(var j=0; j < textL.length; j++){
-                textL[j].style.display = 'none'
-                document.getElementById('togBut').style.transform = 'rotate(0deg)'
-                document.getElementById('togBut').style.marginLeft = '0'
-            }
-            
+            theNav.classList.remove('mynavOpen')
+            arrow.classList.remove('rotate')
+            divBlur.style.filter = 'grayscale(0%)'
         }
         setToggle(!toggle)
         
     }
 
+    const matches = window.matchMedia('(max-width:1000px)').matches
+    const LogoRef = useRef(null)
+    const movilnavRef = useRef(null)
     useEffect(() => {
         toggleBut()
+        if(matches){LogoRef.current.setAttribute('hidden', true)}
+
+        const savedColor = localStorage.getItem('color')     
+        const items = document.getElementsByClassName('item') 
+        if (savedColor){
+            const colorArr = savedColor.split(',')
+            document.body.style.backgroundColor = colorArr[0]
+            navRef.current.style.backgroundColor = colorArr[1]
+            movilnavRef.current.style.backgroundColor = colorArr[1]
+            LogoRef.current.style.backgroundColor = colorArr[2]
+
+            for(var t=0; t < items.length; t++){                
+                items[t].classList.add(colorArr[3])
+            }
+        }
+        
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return (
-        <div className='mynav' ref={navRef}>      
-            <div className='item logo' onClick={toggleBut}>
+
+        <React.Fragment>
+        <div className='movilNav' id='movilNav' ref={movilnavRef}>
+            <div onClick={toggleBut}>
+                <FiChevronsRight size='50px' color='white' id='arrow' className='arrow'/>
+            </div>
+            <div className='item-mov' onClick={toggleBut}>
+                <h2 className='text-white'>AWeather</h2>
+                <div className='icon mr-3'>
+                    <FaAtlassian size='50px' color='white'/>
+                </div>                
+            </div>       
+        </div>
+
+        <div className='mynav' ref={navRef} id='theNav'>      
+            <div className='item logo' ref={LogoRef} onClick={toggleBut} id='logo'>
                 <div className='icon'>
                     <FaAtlassian size='50px' color='white'/>
                 </div>
-                <h2 className='link-text'>Assassin</h2>
+                <h2 className='link-text'>AWeather</h2>
             </div>       
-            <div className='item mt-3'>
+            <div className='item mt-3' onClick={() => prop.change('content')}>
                 <div className='icon'>
                     <FaBuffer size='50px' color='white'/>
                 </div>
-                <h2 className='link-text'>Primero</h2>
+                <h2 className='link-text'>Wheater</h2>
             </div> 
-            <div className='item'>
+            <div className='item' onClick={() => prop.change('setting')}>
                 <div className='icon'>
-                    <FaBuffer size='50px' color='white'/>
+                    <AiFillSetting size='50px' color='white'/>
                 </div>
-                <h2 className='link-text'>Segundo</h2>
+                <h2 className='link-text'>Settings</h2>
             </div> 
-            <div className='item'>
+            <div className='item' onClick={() => prop.change('contact')}>
                 <div className='icon'>
-                    <FaBuffer size='50px' color='white'/>
+                    <MdMessage size='50px' color='white'/>
                 </div>
-                <h2 className='link-text'>Tercero</h2>
+                <h2 className='link-text'>Contact</h2>
             </div>  
             <div className='item last' onClick={toggleBut}>
                 <FiChevronsRight size='50px' color='white' id='togBut'/>
             </div>          
         </div>
+        </React.Fragment>
     )
 }
 

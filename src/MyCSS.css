@@ -4,11 +4,6 @@
     --another-color: #020F59;
 }
 
-.main {
-    background-color: var(--primary-color);
-    height: 100vh;
-}
-
 .mynav {
     width: 5rem;
     height: 100vh;
@@ -20,10 +15,55 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    z-index: 50;
 }
 
-.last {
-    margin-top: auto;
+.link-text {    
+    color: white;
+    margin-left: 10px;
+    display: none;
+}
+
+#togBut {
+    transition: all 400ms ease;
+    position: relative;
+    transform: rotate(0deg);
+    left: 15px;
+}
+
+.mynavOpen {
+    width: 15rem;
+}
+
+.mynavOpen .link-text{
+    display: block;
+}
+
+.mynavOpen #togBut{
+    transform: rotate(180deg);
+    left: 150px;
+}
+
+.arrow{
+    transition: all 200ms ease;
+    transform: rotate(0deg);
+    position: relative;
+    left: 10px;
+}
+.rotate {
+    transform: rotate(180deg);
+    left: 50px;
+}
+
+.movilNav {
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    height: 10vh;
+    position: sticky;
+    top: 0;
+    z-index: 60;
+    
 }
 
 .item{
@@ -35,20 +75,30 @@
     filter: grayscale(80%) opacity(0.7);
 }
 
+.item-mov{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center; 
+    justify-content: flex-end;    
+}
+
+.last {
+    margin-top: auto;
+}
+
 .item:hover {
     filter: grayscale(0%) opacity(1);
-    background-color: var(--another-color);
 }
 
-#togBut {
-    transition: all 400ms ease;
-    position: relative;
-    left: 15px;
+.hblue:hover{
+    background-color: #020F59;
 }
-
-.link-text {    
-    color: white;
-    margin-left: 10px;
+.hyellow:hover{
+    background-color: #F2B705;
+}
+.hdark:hover{
+    background-color: #A6A6A6;
 }
 
 .icon{
@@ -58,5 +108,129 @@
 
 .logo{
     filter: grayscale(0%) opacity(1);
-    background-color: var(--another-color);
+}
+
+.emptyCard {
+    width: 350px;
+    height: 260px;
+    border: 1px solid black;
+    border-radius: 30px;
+    background-image: url('./Images/newone.png');
+    background-position: center;
+    background-size: cover;
+    opacity: 0.1;
+    position: relative;
+    left: -20px;
+}
+
+.cardL {
+    width: 350px;
+    height: 260px;
+    z-index: 20;
+    border: 1px solid black;
+    border-radius: 30px;
+    filter: saturate(60%);
+}
+.cardTitle {
+    width: auto;
+    display: inline-block;
+}
+
+.cardL p, .cardL h5{
+    margin-bottom: 0;    
+    text-shadow: 0 0 2px black;
+}
+.bigTemp {
+    font-size: 70px;
+}
+
+.desc{
+    text-transform: capitalize;
+}
+
+.clBut {
+    position: relative;
+    left: -80px;
+    transition: all 400ms ease;
+}
+.testtt:hover .clBut{
+    left: 0;
+}
+
+.mytoast{
+    height: 100px;
+    width: 30vw;
+    position: fixed;
+    right: 20px;
+    top: 0;
+    background-color: #2372D9;
+    border-radius: 30px;
+    transition: all 500ms ease;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 500;
+}
+
+.mytoast_visible {
+    visibility: visible;
+    opacity: 1;
+    top: 20px
+}
+
+.mytoast p{
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
+    position: relative;
+    top: 20px;
+}
+
+@media only screen and (min-width: 1000px){
+    .movilNav {
+        display: none;
+    }
+}
+@media only screen and (max-width: 1000px){
+    .mynav {
+        left: -5rem;
+    }
+    .mynavOpen{
+        left: 0;
+    }
+}
+
+
+@media only screen and (max-width: 500px){
+    .bigTemp {
+        font-size: 40px;
+    }
+    .cardTitle{
+        font-size: 35px;
+    }
+    .mytoast{
+        width: 90vw;
+    }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1600px){
+    .bigTemp {
+        font-size: 40px;
+    }
+    .cardTitle{
+        font-size: 35px;
+    }
+}
+
+.ContDiv {
+    transition: all 300ms ease;
+    opacity: 1;
+}
+
+.palete{
+    width: 350px;
+    height: 100px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 30px;
+    border: 1px solid black;
 }

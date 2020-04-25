@@ -4,6 +4,9 @@ import './MyCSS.css'
 import Main from './Components/Main';
 
 function App() {
+
+  // const matches = window.matchMedia('(min-width:1000px)').matches  
+
   return (
     <div className="App">
       <Main/>
