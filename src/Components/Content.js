@@ -7,7 +7,7 @@ function Content() {
     console.log('render Content')
 
     const savedList = localStorage.getItem('list') 
-    var array2Pass = 'MADRID'
+    var array2Pass = ['MADRID']
     if(savedList){
         array2Pass = savedList.split(',')
     }
