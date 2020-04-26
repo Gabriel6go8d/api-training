@@ -30,7 +30,7 @@ function Main() {
 
     return (
         <div>   
-            <MyNav change={change}/>
+            <MyNav change={change}/>            
             <div className='ContDiv' id='ContDiv' ref={DivRef}>
                 <div ref={ContRef}>
                     <Content/>

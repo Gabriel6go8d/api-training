@@ -16,6 +16,7 @@
     flex-direction: column;
     align-items: center;
     z-index: 50;
+    box-shadow: 0 2px 3px black;
 }
 
 .link-text {    
@@ -202,6 +203,15 @@
     background-size: cover;
     border-radius: 30px;
     border: 1px solid black;
+}
+
+.closeDiv {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: 30;
+    opacity: 0.2;
+    background-color: gray;
 }
 
 

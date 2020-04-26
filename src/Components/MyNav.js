@@ -5,27 +5,27 @@ import {AiFillSetting} from 'react-icons/ai'
 import {MdMessage} from 'react-icons/md'
 
 function MyNav(prop) {
-
+    const matches = window.matchMedia('(max-width:1000px)').matches  
     
     const [toggle, setToggle] = useState(false)
     const navRef = useRef(null)
-
+    const cloDivRef = useRef(null)
     const toggleBut = () => {
         const theNav = document.getElementById('theNav')
         const arrow = document.getElementById('arrow')
-        const divBlur = document.getElementById('ContDiv')
         if(toggle){
             theNav.classList.add('mynavOpen')
             arrow.classList.add('rotate')
+            if(matches){cloDivRef.current.removeAttribute('hidden')}     
         }else{
             theNav.classList.remove('mynavOpen')
             arrow.classList.remove('rotate')
+            if(matches){cloDivRef.current.setAttribute('hidden', true)}
         }
         setToggle(!toggle)
         
     }
 
-    const matches = window.matchMedia('(max-width:1000px)').matches
     const LogoRef = useRef(null)
     const movilnavRef = useRef(null)
     useEffect(() => {
@@ -93,6 +93,8 @@ function MyNav(prop) {
                 <FiChevronsRight size='40px' color='white' id='togBut'/>
             </div>          
         </div>
+
+        <div className='closeDiv' hidden onClick={toggleBut} ref={cloDivRef}></div>        
         </React.Fragment>
     )
 }
