@@ -4,12 +4,18 @@ import EmptyCard from './EmptyCard'
 import MyModal from './MyModal'
 
 function Content() {
-    console.log('Content Render')
-    const [cityName, setCityName] = useState(['MADRID'])
+    console.log('render Content')
+
+    const savedList = localStorage.getItem('list') 
+    var array2Pass = 'MADRID'
+    if(savedList){
+        array2Pass = savedList.split(',')
+    }
+
+    const [cityName, setCityName] = useState(array2Pass)
     const [info, setInfo] = useState('')
 
     const Load = () => {
-        console.log(cityName)
         setInfo(cityName.map( (xx, index) => <CardLayout key={index} value={xx} close={closeCard}/>))
     }
 
@@ -19,28 +25,30 @@ function Content() {
     },[])
     
     const closeCard = (name) => {
-        console.log(name)
+        console.log(`Delete: ${name}`)
         if(cityName.includes(name)){
             if(cityName.length < 2){
                 setCityName([]) 
                 setInfo('')
-                console.log('menos')
             }else{
                 const index = cityName.indexOf(name);                
                 var array = cityName
                 array.splice(index, 1);
                 setCityName(array)
                 Load()
-            }            
+            } 
+            localStorage.setItem('list', cityName)          
         }   
     }
 
     const [modalShow, setModalShow] = useState(false); 
     const AddCard = (name) => {
+        console.log(`Add: ${name}`)
         var array = cityName
         array.push(name)
         setCityName(array)
         Load()
+        localStorage.setItem('list', cityName)
     }
 
     return (         

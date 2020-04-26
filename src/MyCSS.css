@@ -1,7 +1,22 @@
-:root {
-    --primary-color: #010626;
-    --secundary-color:#010B40;
-    --another-color: #020F59;
+
+html[data-theme = 'blue'] {
+    --body-color: #010626;
+    --nav-color:#010B40;
+    --logo-color: #020F59;
+}
+html[data-theme = 'yellow'] {
+    --body-color: #D97904;
+    --nav-color:#F29F05;
+    --logo-color: #F2B705;
+}
+html[data-theme = 'dark'] {
+    --body-color: #262626;
+    --nav-color:#595959;
+    --logo-color: #A6A6A6;
+}
+
+.body {
+    background-color: var(--body-color);
 }
 
 .mynav {
@@ -10,7 +25,7 @@
     padding: 0;
     margin: 0;
     position: fixed;
-    background-color: var(--secundary-color);
+    background-color: var(--nav-color);
     transition: all 200ms ease;
     display: flex;
     flex-direction: column;
@@ -70,7 +85,7 @@
     position: sticky;
     top: 0;
     z-index: 60;
-    
+    background-color: var(--nav-color);
 }
 
 .item{
@@ -96,16 +111,7 @@
 
 .item:hover {
     filter: grayscale(0%) opacity(1);
-}
-
-.hblue:hover{
-    background-color: #020F59;
-}
-.hyellow:hover{
-    background-color: #F2B705;
-}
-.hdark:hover{
-    background-color: #A6A6A6;
+    background-color: var(--logo-color);
 }
 
 .icon{
@@ -115,6 +121,7 @@
 
 .logo{
     filter: grayscale(0%) opacity(1);
+    background-color: var(--logo-color);
 }
 
 .emptyCard {
