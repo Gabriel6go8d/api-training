@@ -4,8 +4,12 @@ function Settings() {
 
     const changeColor = (e) => {
         const select = e.target.id.split('_')[1]
+        document.documentElement.classList.add('transition')
         document.documentElement.setAttribute('data-theme', select)
         localStorage.setItem('color', select)
+        setTimeout(()=>{
+            document.documentElement.classList.remove('transition')
+        }, 500)
     }
 
     return (

@@ -15,6 +15,13 @@ html[data-theme = 'dark'] {
     --logo-color: #A6A6A6;
 }
 
+html.transition,
+html.transition *,
+html.transition *:before,
+html.transition *:after {
+    transition: all 500ms !important;
+}
+
 .body {
     background-color: var(--body-color);
 }
