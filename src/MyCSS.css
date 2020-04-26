@@ -141,7 +141,7 @@
     display: inline-block;
 }
 
-.cardL p, .cardL h5{
+.cardL p, .cardL h5, .cardL small{
     margin-bottom: 0;    
     text-shadow: 0 0 2px black;
 }

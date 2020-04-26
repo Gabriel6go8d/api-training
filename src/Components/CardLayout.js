@@ -138,6 +138,7 @@ function CardLayout(prop) {
                         </div>
                         <div className='col-4 m-0 p-0 text-center'>
                             <h4 className='bigTemp' ref={TempRef}>º</h4>
+                            <small className='mt-1'>Updated at:</small>
                             <h5 ref={TimRef}>...</h5>
                         </div>                
                     </div>
