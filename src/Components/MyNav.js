@@ -67,30 +67,30 @@ function MyNav(prop) {
         <div className='mynav' ref={navRef} id='theNav'>      
             <div className='item logo' ref={LogoRef} onClick={toggleBut} id='logo'>
                 <div className='icon'>
-                    <FaAtlassian size='50px' color='white'/>
+                    <FaAtlassian size='40px' color='white'/>
                 </div>
                 <h2 className='link-text'>AWeather</h2>
             </div>       
             <div className='item mt-3' onClick={() => prop.change('content')}>
                 <div className='icon'>
-                    <FaBuffer size='50px' color='white'/>
+                    <FaBuffer size='40px' color='white'/>
                 </div>
                 <h2 className='link-text'>Wheater</h2>
             </div> 
             <div className='item' onClick={() => prop.change('setting')}>
                 <div className='icon'>
-                    <AiFillSetting size='50px' color='white'/>
+                    <AiFillSetting size='40px' color='white'/>
                 </div>
                 <h2 className='link-text'>Settings</h2>
             </div> 
             <div className='item' onClick={() => prop.change('contact')}>
                 <div className='icon'>
-                    <MdMessage size='50px' color='white'/>
+                    <MdMessage size='40px' color='white'/>
                 </div>
                 <h2 className='link-text'>Contact</h2>
             </div>  
             <div className='item last' onClick={toggleBut}>
-                <FiChevronsRight size='50px' color='white' id='togBut'/>
+                <FiChevronsRight size='40px' color='white' id='togBut'/>
             </div>          
         </div>
         </React.Fragment>

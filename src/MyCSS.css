@@ -5,7 +5,7 @@
 }
 
 .mynav {
-    width: 5rem;
+    width: 70px;
     height: 100vh;
     padding: 0;
     margin: 0;
@@ -21,7 +21,13 @@
 .link-text {    
     color: white;
     margin-left: 10px;
+    margin-bottom: 0;
     display: none;
+    font-size: 25px;
+}
+
+.logo .link-text{
+    font-size: 30px;
 }
 
 #togBut {
@@ -67,7 +73,7 @@
 }
 
 .item{
-    height: 5rem;
+    height: 80px;
     width: 100%;
     display: flex;
     align-items: center;    
@@ -103,7 +109,7 @@
 
 .icon{
     width: 50px;
-    margin-left: 15px;
+    margin-left: 10px;
 }
 
 .logo{
@@ -184,42 +190,6 @@
     top: 20px;
 }
 
-@media only screen and (min-width: 1000px){
-    .movilNav {
-        display: none;
-    }
-}
-@media only screen and (max-width: 1000px){
-    .mynav {
-        left: -5rem;
-    }
-    .mynavOpen{
-        left: 0;
-    }
-}
-
-
-@media only screen and (max-width: 500px){
-    .bigTemp {
-        font-size: 40px;
-    }
-    .cardTitle{
-        font-size: 35px;
-    }
-    .mytoast{
-        width: 90vw;
-    }
-}
-
-@media only screen and (min-width: 1200px) and (max-width: 1600px){
-    .bigTemp {
-        font-size: 40px;
-    }
-    .cardTitle{
-        font-size: 35px;
-    }
-}
-
 .ContDiv {
     transition: all 300ms ease;
     opacity: 1;
@@ -233,3 +203,74 @@
     border-radius: 30px;
     border: 1px solid black;
 }
+
+
+@media only screen and (max-width: 360px){
+    .cardL {
+        width: 250px;
+        height: 280px;
+    }
+    .emptyCard{
+        width: 250px;
+        height: 280px;
+    }
+}
+@media only screen and (min-width: 360px) and (max-width: 450px){
+    .cardL {
+        width: 300px;
+    }
+    .emptyCard{
+        width: 300px;
+    }
+}
+
+@media only screen and (max-width: 450px){
+    .bigTemp {
+        font-size: 40px;
+    }
+    .cardTitle{
+        font-size: 35px;
+    }
+    .mytoast{
+        width: 90vw;
+    }
+}
+
+@media only screen and (min-width: 750px) and (max-width: 850px){
+    .cardL {
+        width: 300px;
+    }
+    .emptyCard {
+        width: 300px;
+    }
+}
+
+@media only screen and (max-width: 1000px){
+    .mynav {
+        left: -5rem;
+    }
+    .mynavOpen{
+        left: 0;
+    }
+}
+
+@media only screen and (min-width: 1000px){
+    .movilNav {
+        display: none;
+    }
+}
+@media only screen and (min-width: 1190px) and (max-width: 1300px){
+    .cardL {
+        width: 300px;
+    }
+    .emptyCard {
+        width: 300px;
+    }
+    .bigTemp {
+        font-size: 40px;
+    }
+    .cardTitle{
+        font-size: 35px;
+    }
+}
+
