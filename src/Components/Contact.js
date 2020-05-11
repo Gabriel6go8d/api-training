@@ -1,7 +1,6 @@
 import React from 'react'
-import {IoIosMail} from 'react-icons/io'
 import {BsBriefcaseFill} from 'react-icons/bs'
-import {FaCode, FaGithub} from 'react-icons/fa'
+import {FaCode, FaGithub, FaEnvelope} from 'react-icons/fa'
 import {AiFillHtml5} from 'react-icons/ai'
 import {DiCss3, DiReact, DiBootstrap} from 'react-icons/di'
 
@@ -26,7 +25,7 @@ function Contact() {
                 <h4>Author: Gabriel Gutierrez</h4>
                 <a href='mailto:gabriel.ares93@gmail.com' className='contact_link'>
                     <div>
-                        <IoIosMail size='32px' color='white'/>
+                        <FaEnvelope size='25px' color='white'/>
                         <p>Email: </p>
                     </div>
                     <p>gabriel.ares93@gmail.com</p>
@@ -34,7 +33,7 @@ function Contact() {
 
                 <a href='https://gabriel6go8d.github.io/curriculum-vitae-2/' className='contact_link'>
                     <div>
-                        <BsBriefcaseFill size='28px' color='white'/>
+                        <BsBriefcaseFill size='25px' color='white'/>
                         <p>Portfolio: </p>
                     </div>
                     <p>https://gabriel6go8d.github.io/curriculum-vitae-2/</p>
@@ -49,7 +48,7 @@ function Contact() {
                 </a>
                 <a href='https://github.com/Gabriel6go8d' className='contact_link'>
                     <div>
-                        <FaGithub size='30px' color='white'/>
+                        <FaGithub size='25px' color='white'/>
                         <p>GitHub: </p>
                     </div>
                     <p>https://github.com/Gabriel6go8d</p>

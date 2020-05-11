@@ -235,6 +235,7 @@ html.transition *:after {
     display: flex;    
     margin-bottom: 10px;
     word-wrap: break-word;
+    line-height: 25px;
 }
 .contact_link p{
     margin-left: 5px;
