@@ -10,6 +10,8 @@ function App() {
   const savedColor = localStorage.getItem('color') 
   if(savedColor){
     document.documentElement.setAttribute('data-theme', savedColor)
+  }else{
+    document.documentElement.setAttribute('data-theme', 'blue')
   }
 
   return (
